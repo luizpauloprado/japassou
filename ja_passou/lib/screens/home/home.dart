@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ja_passou/screens/search/search.dart';
 import 'package:ja_passou/widgets/custom_list_section.dart';
 import 'package:ja_passou/widgets/custom_list_tile.dart';
 import 'package:ja_passou/widgets/custom_list_view.dart';
@@ -24,29 +25,22 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.white,
                 size: 32.0,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchScreen()),
+                );
+              },
             ),
           ),
         ],
       ),
       body: CustomListView(items: [
         SectionItem(title: "LINHAS FAVORITAS"),
-        TileItem(
-          title: "106A-10",
-          subtitle: "Metro Santana > Itaim Bibi"
-        ),
-        TileItem(
-          title: "106A-10",
-          subtitle: "Metro Santana > Itaim Bibi"
-        ),
-        TileItem(
-          title: "106A-10",
-          subtitle: "Metro Santana > Itaim Bibi"
-        ),
-        TileItem(
-          title: "106A-10",
-          subtitle: "Metro Santana > Itaim Bibi"
-        ),
+        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
       ]),
       // floatingActionButton: FloatingActionButton(
       //   child: Icon(Icons.search),
