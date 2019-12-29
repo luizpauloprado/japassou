@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ja_passou/screens/search/search.dart';
 import 'package:ja_passou/widgets/custom_list_section.dart';
 import 'package:ja_passou/widgets/custom_list_tile.dart';
 import 'package:ja_passou/widgets/custom_list_view.dart';
@@ -27,10 +26,7 @@ class HomeScreen extends StatelessWidget {
                 size: 32.0,
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchScreen()),
-                );
+                Navigator.pushNamed(context, '/search');
               },
             ),
           ),
@@ -45,10 +41,6 @@ class HomeScreen extends StatelessWidget {
           TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(Icons.search),
-      //   onPressed: () {},
-      // ),
     );
   }
 }

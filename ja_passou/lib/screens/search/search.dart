@@ -65,7 +65,7 @@ class SearchScreen extends StatelessWidget {
             text:
                 "É possível pesquisar um ônibus pelo número ou pelo nome da linha.",
           ),
-          Divider(height: 0),
+          //Divider(height: 0),
           Expanded(
             child: CustomListView(
               items: [

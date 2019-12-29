@@ -8,18 +8,26 @@ class Info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
-      child: Wrap(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              text,
-              style: Theme.of(context).textTheme.body2,
+      child: Container(
+        color: Colors.white,
+        child: Wrap(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                text,
+                style: Theme.of(context).textTheme.body2,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Color.fromRGBO(0, 0, 0, 0.2),
+          blurRadius: 2,
+        )
+      ]),
     );
   }
 }

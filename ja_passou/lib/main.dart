@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ja_passou/screens/home/home.dart';
+import 'package:ja_passou/screens/search/search.dart';
+
+/// TODO:
+/// Set status bar as light
 
 void main() => runApp(MyApp());
 
@@ -10,6 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Já Passou?',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/search': (context) => SearchScreen(),
+      },
       theme: ThemeData(
         primaryColor: Color.fromRGBO(0, 185, 230, 1),
         accentColor: Color.fromRGBO(234, 0, 99, 1),
@@ -19,9 +28,6 @@ class MyApp extends StatelessWidget {
         dividerTheme: DividerThemeData(
           thickness: 0.3,
         ),
-        // inputDecorationTheme: InputDecorationTheme(
-
-        // ),
         textTheme: TextTheme(
           body2: TextStyle(
             color: Color.fromRGBO(14, 140, 171, 1.0),
@@ -41,7 +47,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: HomeScreen(),
     );
   }
 }
