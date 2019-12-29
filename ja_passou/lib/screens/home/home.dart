@@ -35,13 +35,15 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: CustomListView(items: [
-        SectionItem(title: "LINHAS FAVORITAS"),
-        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-        TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-      ]),
+      body: CustomListView(
+        items: [
+          SectionItem(title: "LINHAS FAVORITAS"),
+          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+        ],
+      ),
       // floatingActionButton: FloatingActionButton(
       //   child: Icon(Icons.search),
       //   onPressed: () {},

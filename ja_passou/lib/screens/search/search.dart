@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ja_passou/widgets/custom_list_section.dart';
+import 'package:ja_passou/widgets/custom_list_tile.dart';
+import 'package:ja_passou/widgets/custom_list_view.dart';
 
-class SearchScreen extends StatefulWidget {
-  SearchScreen({Key key}) : super(key: key);
+class SearchScreen extends StatelessWidget {
+  const SearchScreen({Key key}) : super(key: key);
 
-  @override
-  _SearchScreenState createState() => _SearchScreenState();
-}
-
-class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,29 +20,73 @@ class _SearchScreenState extends State<SearchScreen> {
             Navigator.pop(context);
           },
         ),
+        titleSpacing: 0,
         title: Container(
-          // height: 40.0,
+          padding: EdgeInsets.only(right: 16.0),
           child: TextField(
             autocorrect: false,
             enableSuggestions: false,
             autofocus: true,
+            cursorColor: Colors.white,
+            cursorWidth: 1.0,
+            textInputAction: TextInputAction.search,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.normal,
+              fontSize: 18,
+            ),
             decoration: InputDecoration(
-              fillColor: Colors.blue,
+              fillColor: Color.fromRGBO(14, 140, 171, 1.0),
               filled: true,
               hasFloatingPlaceholder: false,
               hintText: "Qual ônibus você usa?",
+              hintStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.normal,
+                fontSize: 18,
+              ),
               isDense: true,
               contentPadding: EdgeInsets.all(8),
               border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.0),
-              borderSide: BorderSide(
-                  width: 0, 
+                borderRadius: BorderRadius.circular(8.0),
+                borderSide: BorderSide(
+                  width: 0,
                   style: BorderStyle.none,
+                ),
               ),
-          ),
             ),
           ),
         ),
+      ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            color: Colors.white,
+            child: Wrap(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    "É possível pesquisar um ônibus pelo número ou pelo nome da linha.",
+                    style: Theme.of(context).textTheme.body2,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(height: 0),
+          Expanded(
+            child: CustomListView(
+              items: [
+                SectionItem(title: "RESULTADOS DA PESQUISA"),
+                TileItem(
+                    title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+                TileItem(
+                    title: "106A-10", subtitle: "Itaim Bibi > Metro Santana"),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

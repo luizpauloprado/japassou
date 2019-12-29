@@ -19,7 +19,14 @@ class MyApp extends StatelessWidget {
         dividerTheme: DividerThemeData(
           thickness: 0.3,
         ),
+        // inputDecorationTheme: InputDecorationTheme(
+
+        // ),
         textTheme: TextTheme(
+          body2: TextStyle(
+            color: Color.fromRGBO(14, 140, 171, 1.0),
+            fontWeight: FontWeight.w600,
+          ),
           subhead: TextStyle(
             fontWeight: FontWeight.bold,
             color: Color.fromRGBO(51, 51, 51, 1),
