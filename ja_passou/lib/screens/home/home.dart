@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ja_passou/widgets/custom_list_section.dart';
-import 'package:ja_passou/widgets/custom_list_tile.dart';
+import 'package:ja_passou/widgets/section.dart';
+import 'package:ja_passou/widgets/tile.dart';
 import 'package:ja_passou/widgets/custom_list_view.dart';
 
 class HomeScreen extends StatelessWidget {

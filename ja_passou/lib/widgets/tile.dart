@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ja_passou/widgets/custom_list_view.dart';
 
-class TileItem implements ListItem {
-  final String title;
-  final String subtitle;
-
-  TileItem({this.title, this.subtitle});
-}
-
-class CustomListTile extends StatelessWidget {
-  const CustomListTile({Key key, this.title, this.subtile}) : super(key: key);
+class Tile extends StatelessWidget {
+  const Tile({Key key, this.title, this.subtile}) : super(key: key);
 
   final String title;
   final String subtile;
