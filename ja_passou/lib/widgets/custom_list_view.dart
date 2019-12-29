@@ -17,8 +17,9 @@ class SectionItem implements ListItem {
 class TileItem implements ListItem {
   final String title;
   final String subtitle;
+  final bool showShadow;
 
-  TileItem({this.title, this.subtitle});
+  TileItem({this.title, this.subtitle, this.showShadow = false});
 }
 
 class CustomListView extends StatelessWidget {
@@ -45,6 +46,7 @@ class CustomListView extends StatelessWidget {
             return Tile(
               title: item.title,
               subtile: item.subtitle,
+              showShadow: item.showShadow,
             );
           } else {
             return null;

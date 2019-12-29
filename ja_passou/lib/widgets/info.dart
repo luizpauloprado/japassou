@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ja_passou/widgets/shadow.dart';
 
 class Info extends StatelessWidget {
   const Info({Key key, this.text}) : super(key: key);
@@ -22,12 +23,7 @@ class Info extends StatelessWidget {
           ],
         ),
       ),
-      decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
-          color: Color.fromRGBO(0, 0, 0, 0.2),
-          blurRadius: 2,
-        )
-      ]),
+      decoration: Shadow(),
     );
   }
 }

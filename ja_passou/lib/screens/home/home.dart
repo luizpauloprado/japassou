@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
           TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
           TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
           TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi", showShadow: true),
         ],
       ),
     );

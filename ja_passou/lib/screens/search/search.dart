@@ -70,7 +70,7 @@ class SearchScreen extends StatelessWidget {
                 TileItem(
                     title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
                 TileItem(
-                    title: "106A-10", subtitle: "Itaim Bibi > Metro Santana"),
+                    title: "106A-10", subtitle: "Itaim Bibi > Metro Santana", showShadow: true),
               ],
             ),
           ),
