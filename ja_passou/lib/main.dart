@@ -5,6 +5,7 @@ import 'package:ja_passou/screens/search/search.dart';
 
 /// TODO:
 /// Set status bar as light
+/// Add a box decorated container to the last item of a ListView
 
 void main() => runApp(MyApp());
 
