@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ja_passou/widgets/custom_list_section.dart';
 import 'package:ja_passou/widgets/custom_list_tile.dart';
 import 'package:ja_passou/widgets/custom_list_view.dart';
+import 'package:ja_passou/widgets/info.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key key}) : super(key: key);
@@ -60,19 +61,9 @@ class SearchScreen extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          Container(
-            color: Colors.white,
-            child: Wrap(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    "É possível pesquisar um ônibus pelo número ou pelo nome da linha.",
-                    style: Theme.of(context).textTheme.body2,
-                  ),
-                ),
-              ],
-            ),
+          Info(
+            text:
+                "É possível pesquisar um ônibus pelo número ou pelo nome da linha.",
           ),
           Divider(height: 0),
           Expanded(
