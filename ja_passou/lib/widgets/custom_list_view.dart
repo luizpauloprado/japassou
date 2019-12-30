@@ -18,8 +18,9 @@ class TileItem implements ListItem {
   final String title;
   final String subtitle;
   final bool showShadow;
+  final VoidCallback onPressed;
 
-  TileItem({this.title, this.subtitle, this.showShadow = false});
+  TileItem({this.title, this.subtitle, this.showShadow = false, this.onPressed});
 }
 
 class CustomListView extends StatelessWidget {
@@ -47,6 +48,7 @@ class CustomListView extends StatelessWidget {
               title: item.title,
               subtile: item.subtitle,
               showShadow: item.showShadow,
+              onPressed: item.onPressed,
             );
           } else {
             return null;

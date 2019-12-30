@@ -12,8 +12,8 @@ class SearchScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white,
-            size: 32.0,
+            color: Theme.of(context).iconTheme.color,
+            size: Theme.of(context).iconTheme.size,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -68,9 +68,16 @@ class SearchScreen extends StatelessWidget {
               items: [
                 SectionItem(title: "RESULTADOS DA PESQUISA"),
                 TileItem(
-                    title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
+                  title: "106A-10",
+                  subtitle: "Metro Santana > Itaim Bibi",
+                  onPressed: () {},
+                ),
                 TileItem(
-                    title: "106A-10", subtitle: "Itaim Bibi > Metro Santana", showShadow: true),
+                  title: "106A-10",
+                  subtitle: "Itaim Bibi > Metro Santana",
+                  showShadow: true,
+                  onPressed: () {},
+                ),
               ],
             ),
           ),

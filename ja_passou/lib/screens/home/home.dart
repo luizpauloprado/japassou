@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ja_passou/screens/live_on_map/live_on_map.dart';
 import 'package:ja_passou/widgets/custom_list_view.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,8 +21,8 @@ class HomeScreen extends StatelessWidget {
             child: IconButton(
               icon: Icon(
                 Icons.menu,
-                color: Colors.white,
-                size: 32.0,
+                color: Theme.of(context).iconTheme.color,
+                size: Theme.of(context).iconTheme.size,
               ),
               onPressed: () {
                 Navigator.pushNamed(context, '/search');
@@ -33,10 +34,36 @@ class HomeScreen extends StatelessWidget {
       body: CustomListView(
         items: [
           SectionItem(title: "LINHAS FAVORITAS"),
-          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi"),
-          TileItem(title: "106A-10", subtitle: "Metro Santana > Itaim Bibi", showShadow: true),
+          TileItem(
+            title: "106A-10",
+            subtitle: "Metro Santana > Itaim Bibi",
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                '/live-on-map',
+                arguments: LiveOnMapScreenArguments(
+                  title: '106A-10',
+                  lineId: 'id',
+                ),
+              );
+            },
+          ),
+          TileItem(
+            title: "106A-10",
+            subtitle: "Metro Santana > Itaim Bibi",
+            onPressed: () {},
+          ),
+          TileItem(
+            title: "106A-10",
+            subtitle: "Metro Santana > Itaim Bibi",
+            onPressed: () {},
+          ),
+          TileItem(
+            title: "106A-10",
+            subtitle: "Metro Santana > Itaim Bibi",
+            showShadow: true,
+            onPressed: () {},
+          ),
         ],
       ),
     );

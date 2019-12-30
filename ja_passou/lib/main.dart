@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ja_passou/screens/home/home.dart';
+import 'package:ja_passou/screens/live_on_map/live_on_map.dart';
 import 'package:ja_passou/screens/search/search.dart';
 
 /// TODO:
 /// Set status bar as light
-/// Add a box decorated container to the last item of a ListView
+/// Use Roboto in iOS (https://flutter.dev/docs/cookbook/design/fonts)
 
 void main() => runApp(MyApp());
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomeScreen(),
         '/search': (context) => SearchScreen(),
+        '/live-on-map': (context) => LiveOnMapScreen(),
       },
       theme: ThemeData(
         primaryColor: Color.fromRGBO(0, 185, 230, 1),
@@ -29,7 +31,15 @@ class MyApp extends StatelessWidget {
         dividerTheme: DividerThemeData(
           thickness: 0.3,
         ),
+        iconTheme: IconThemeData(
+          color: Colors.white,
+          size: 32.0,
+        ),
         textTheme: TextTheme(
+          title: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
           body2: TextStyle(
             color: Color.fromRGBO(14, 140, 171, 1.0),
             fontWeight: FontWeight.w600,

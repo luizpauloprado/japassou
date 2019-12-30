@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:ja_passou/widgets/shadow.dart';
 
 class Tile extends StatelessWidget {
-  const Tile({Key key, this.title, this.subtile, this.showShadow})
+  const Tile({Key key, this.title, this.subtile, this.showShadow, this.onPressed})
       : super(key: key);
 
   final String title;
   final String subtile;
   final bool showShadow;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class Tile extends StatelessWidget {
               ],
             ),
           ),
-          onPressed: () {},
+          onPressed: onPressed,
         ),
         decoration: showShadow ? Shadow() : null);
   }
