@@ -1,10 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'dart:async';
 
 class LiveOnMapScreenArguments {
   final String title;
   final String lineId;
 
   LiveOnMapScreenArguments({this.title, this.lineId});
+}
+
+class MyMap extends StatefulWidget {
+  MyMap({Key key}) : super(key: key);
+
+  @override
+  _MyMapState createState() => _MyMapState();
+}
+
+class _MyMapState extends State<MyMap> {
+  Completer<GoogleMapController> _controller = Completer();
+
+  static const LatLng _center = const LatLng(-23.550520, -46.633308);
+
+  void _onMapCreated(GoogleMapController controller) {
+    _controller.complete(controller);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GoogleMap(
+      mapType: MapType.normal,
+      onMapCreated: _onMapCreated,
+      initialCameraPosition: CameraPosition(
+        target: _center,
+        zoom: 11.0,
+      ),
+    );
+  }
 }
 
 class LiveOnMapScreen extends StatelessWidget {
@@ -31,7 +62,7 @@ class LiveOnMapScreen extends StatelessWidget {
           },
         ),
       ),
-      body: Container(),
+      body: MyMap(),
     );
   }
 }
