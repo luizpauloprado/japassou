@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:async';
 
 class LiveOnMapScreenArguments {
   final String title;
@@ -17,12 +19,27 @@ class MyMap extends StatefulWidget {
 }
 
 class _MyMapState extends State<MyMap> {
-  Completer<GoogleMapController> _controller = Completer();
+  GoogleMapController _controller;
+  String _mapStyle;
+  LatLng _currentPosition = LatLng(-23.550520, -46.633308);
 
-  static const LatLng _center = const LatLng(-23.550520, -46.633308);
+  @override
+  void initState() {
+    super.initState();
+    rootBundle.loadString('assets/configs/map_style.json').then((string) {
+      _mapStyle = string;
+    });
+    _getCurrentPositon();
+  }
+
+  void _getCurrentPositon() async {
+    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    _currentPosition = LatLng(position.latitude, position.latitude);
+  }
 
   void _onMapCreated(GoogleMapController controller) {
-    _controller.complete(controller);
+    _controller = controller;
+    _controller.setMapStyle(_mapStyle);
   }
 
   @override
@@ -30,9 +47,11 @@ class _MyMapState extends State<MyMap> {
     return GoogleMap(
       mapType: MapType.normal,
       onMapCreated: _onMapCreated,
+      myLocationButtonEnabled: true,
+      myLocationEnabled: true,
       initialCameraPosition: CameraPosition(
-        target: _center,
-        zoom: 11.0,
+        target: _currentPosition,
+        zoom: 16.0,
       ),
     );
   }

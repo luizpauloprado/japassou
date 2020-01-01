@@ -7,6 +7,7 @@ import 'package:ja_passou/screens/search/search.dart';
 /// TODO:
 /// Set status bar as light
 /// Use Roboto in iOS (https://flutter.dev/docs/cookbook/design/fonts)
+/// Get current position as stream (https://pub.dev/packages/geolocator)
 
 void main() => runApp(MyApp());
 
@@ -39,7 +40,6 @@ class MyApp extends StatelessWidget {
           title: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontSize: 24.0,
           ),
           body2: TextStyle(
             color: Color.fromRGBO(14, 140, 171, 1.0),
