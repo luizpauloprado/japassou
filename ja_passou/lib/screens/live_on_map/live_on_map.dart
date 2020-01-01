@@ -22,6 +22,7 @@ class _MyMapState extends State<MyMap> {
   GoogleMapController _controller;
   String _mapStyle;
   LatLng _currentPosition = LatLng(-23.550520, -46.633308);
+  Set<Marker> _markers = {};
 
   @override
   void initState() {
@@ -30,11 +31,36 @@ class _MyMapState extends State<MyMap> {
       _mapStyle = string;
     });
     _getCurrentPositon();
+    _addMarker();
   }
 
   void _getCurrentPositon() async {
-    Position position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-    _currentPosition = LatLng(position.latitude, position.latitude);
+    Position position = await Geolocator()
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      _currentPosition = LatLng(position.latitude, position.latitude);
+    });
+  }
+
+  void _addMarker() async {
+    final icon = await BitmapDescriptor.fromAssetImage(
+      ImageConfiguration(size: Size(57, 67)),
+      'assets/images/marker_bus.png',
+    );
+    _markers.add(
+      Marker(
+        markerId: MarkerId('id'),
+        position: LatLng(-23.557859,-46.641162),
+        icon: icon,
+      ),
+    );
+    _markers.add(
+      Marker(
+        markerId: MarkerId('id2'),
+        position: LatLng(-23.559573,-46.642605),
+        icon: icon,
+      ),
+    );
   }
 
   void _onMapCreated(GoogleMapController controller) {
@@ -49,6 +75,7 @@ class _MyMapState extends State<MyMap> {
       onMapCreated: _onMapCreated,
       myLocationButtonEnabled: true,
       myLocationEnabled: true,
+      markers: _markers,
       initialCameraPosition: CameraPosition(
         target: _currentPosition,
         zoom: 16.0,
@@ -80,6 +107,16 @@ class LiveOnMapScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.refresh,
+              color: Theme.of(context).iconTheme.color,
+              size: Theme.of(context).iconTheme.size,
+            ),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: MyMap(),
     );
