@@ -110,6 +110,14 @@ class LiveOnMapScreen extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(
+              Icons.delete,
+              color: Theme.of(context).iconTheme.color,
+              size: Theme.of(context).iconTheme.size,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
               Icons.refresh,
               color: Theme.of(context).iconTheme.color,
               size: Theme.of(context).iconTheme.size,
