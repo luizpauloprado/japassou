@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           title: TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.bold,
+            fontSize: 24.0
           ),
           body2: TextStyle(
             color: Color.fromRGBO(14, 140, 171, 1.0),
