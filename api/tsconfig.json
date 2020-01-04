@@ -11,5 +11,8 @@
     "lib": [
       "esnext", "dom"
     ]
-  }
+  },
+  "exclude": [
+    "src/scripts"
+  ]
 }
