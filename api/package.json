@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/server.ts",
-    "import-gtfs": "node src/scripts/import.js"
+    "import-gtfs": "node src/scripts/import.js",
+    "mongodb-local": "mongod --config /usr/local/etc/mongod.conf"
   },
   "author": "Luiz Paulo Prado",
   "license": "ISC",
