@@ -1,6 +1,8 @@
 const gtfs = require('gtfs');
 const mongoose = require('mongoose');
 
+// https://www.npmjs.com/package/gtfs#gtfs-import-script
+
 const config = {
     mongoUrl: 'mongodb://localhost:27017/gtfs',
     agencies: [
@@ -10,7 +12,6 @@ const config = {
       }
     ],
     logFunction: function(text) {
-      // Do something with the logs here, like save it or send it somewhere
       console.log(text);
     }
   };
