@@ -5,6 +5,7 @@ export const typeDefs = gql`
     authenticate: Boolean!
     searchLines(description: String!): [Line]
     getTrip(tripId: String!): Trip
+    getLinePosition(lineId: String!): Positions
   }
   type Line {
     lineId: String!
@@ -25,5 +26,13 @@ export const typeDefs = gql`
     directionId: String!
     shapeId: String!
     route: Route!
+  }
+  type Positions {
+    lastUpdate: String!
+    currentPositions: [CurrentPosition]
+  }
+  type CurrentPosition {
+    latitude: Float!
+    longitude: Float!
   }
 `;

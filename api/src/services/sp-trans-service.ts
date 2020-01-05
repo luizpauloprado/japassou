@@ -1,3 +1,4 @@
+import { Positions, CurrentPosition } from './../models/services/positions';
 import axios, { AxiosInstance } from 'axios';
 import { ProviderService } from "../models/application/provider-service";
 import { capitalizeWords } from '../utils/text';
@@ -30,7 +31,7 @@ class SpTransService implements ProviderService {
     }
   }
 
-  public async searchLines(description): Promise<Line[]> {
+  public async searchLines(description: String): Promise<Line[]> {
     const { data } = await this.api({
       method: 'get',
       url: '/linha/buscar',
@@ -46,18 +47,20 @@ class SpTransService implements ProviderService {
     return data.map(toLine) || [];
   }
 
-  public getLinePosition(lineCode) {
-    return this.api({
+  public async getLinePosition(lineId: String): Promise<Positions> {
+    const { data } = await this.api({
       method: 'get',
-      url: '/linha/posicao',
+      url: '/posicao/linha',
       params: {
-        codigoLinha: lineCode
+        codigoLinha: lineId
       },
       withCredentials: true,
       headers: {
         Cookie: this.cookie
       }
     });
+
+    return toPositions(data);
   }
 }
 
@@ -81,5 +84,25 @@ const toLine = (data: any): Line => {
     tripHeadsign
   };
 };
+
+const toPositions = (data: any): Positions => {
+  const lastUpdate = data.hr;
+  const currentPositions = data.vs.map(toCurrentPosition);
+
+  return {
+    lastUpdate,
+    currentPositions
+  };
+}
+
+const toCurrentPosition = (data: any): CurrentPosition => {
+  const latitude = data.py;
+  const longitude = data.px;
+
+  return {
+    latitude,
+    longitude
+  };
+}
 
 export default SpTransService;
