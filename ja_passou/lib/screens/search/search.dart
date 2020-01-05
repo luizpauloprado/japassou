@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ja_passou/screens/live_on_map/live_on_map.dart';
 import 'package:ja_passou/widgets/custom_list_view.dart';
 import 'package:ja_passou/widgets/info.dart';
 
@@ -70,7 +71,16 @@ class SearchScreen extends StatelessWidget {
                 TileItem(
                   title: "106A-10",
                   subtitle: "Metro Santana > Itaim Bibi",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/live-on-map',
+                      arguments: LiveOnMapScreenArguments(
+                        title: '106A-10',
+                        lineId: 'id',
+                      ),
+                    );
+                  },
                 ),
                 TileItem(
                   title: "106A-10",
