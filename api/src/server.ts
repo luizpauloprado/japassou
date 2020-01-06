@@ -10,7 +10,7 @@ const MONGODB_CONNECTION = process.env.PORT || 'mongodb://localhost:27017/gtfs';
 
 mongoose.connect(MONGODB_CONNECTION)
   .then(() => console.log('✅ MongoDB connected'))
-  .catch(() => console.log('🆘 MongoDB failed to connect'))
+  .catch(() => console.log('🛑 MongoDB failed to connect'))
 
 const server = new ApolloServer({
   typeDefs,
