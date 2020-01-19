@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'dart:io' show Platform;
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -45,19 +46,21 @@ class _MyMapState extends State<MyMap> {
   void _addMarker() async {
     final icon = await BitmapDescriptor.fromAssetImage(
       ImageConfiguration(size: Size(57, 67)),
-      'assets/images/marker_bus.png',
+      Platform.isAndroid
+          ? 'assets/images/marker_bus_android.png'
+          : 'assets/images/marker_bus_ios.png',
     );
     _markers.add(
       Marker(
         markerId: MarkerId('id'),
-        position: LatLng(-23.557859,-46.641162),
+        position: LatLng(-23.557859, -46.641162),
         icon: icon,
       ),
     );
     _markers.add(
       Marker(
         markerId: MarkerId('id2'),
-        position: LatLng(-23.559573,-46.642605),
+        position: LatLng(-23.559573, -46.642605),
         icon: icon,
       ),
     );
