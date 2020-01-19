@@ -22,6 +22,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Precisamos acessar a sua localização para que o aplicativo funcione corretamente.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Precisamos acessar a sua localização para que o aplicativo funcione corretamente.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Precisamos acessar a sua localização para que o aplicativo funcione corretamente.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -45,11 +51,5 @@
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Precisamos acessar a sua localização para que o aplicativo funcione corretamente.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Precisamos acessar a sua localização para que o aplicativo funcione corretamente.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Precisamos acessar a sua localização para que o aplicativo funcione corretamente.</string>
 </dict>
 </plist>
