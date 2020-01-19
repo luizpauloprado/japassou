@@ -24,11 +24,15 @@ class MyApp extends StatelessWidget {
         '/live-on-map': (context) => LiveOnMapScreen(),
       },
       theme: ThemeData(
+        fontFamily: 'Roboto',
         primaryColor: Color.fromRGBO(0, 185, 230, 1),
         accentColor: Color.fromRGBO(234, 0, 99, 1),
         backgroundColor: Color.fromRGBO(238, 238, 238, 1),
         scaffoldBackgroundColor: Color.fromRGBO(238, 238, 238, 1),
         brightness: Brightness.light,
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.dark,
+        ),
         dividerTheme: DividerThemeData(
           thickness: 0.3,
         ),
