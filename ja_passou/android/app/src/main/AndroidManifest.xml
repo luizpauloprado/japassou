@@ -11,7 +11,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="ja_passou"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
             <meta-data
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyDCGX2F4Ik-6qsEqRFmShe6rlYsQ_1G_FU"/>
