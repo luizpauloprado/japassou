@@ -17,7 +17,7 @@ export const providers: ProvidersConfig = {
       baseURL: 'http://api.olhovivo.sptrans.com.br/v2.1'
     },
     meta: {
-      token: '568753ed739d101ca9cde5e5e45ee43ced498b05dc96dc4a307b519078403510'
+      token: 'xxxxxxx'
     }
   }
 };
